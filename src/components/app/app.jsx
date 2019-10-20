@@ -1,10 +1,12 @@
 import React from 'react';
-import MainScreen from '../main-screen/main-screen.jsx';
+import MainScreen from '../main-screen/MainScreen.jsx';
 
-const App = () => {
+const App = (props) => {
+  const {places} = props;
 
-  return <MainScreen/>;
+  return <MainScreen
+    placeCards={places}
+  />;
 };
-
 
 export default App;
