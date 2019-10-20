@@ -1,10 +1,17 @@
 import React from 'react';
-import MainScreen from '../main-screen/main-screen.jsx';
+import PropTypes from 'prop-types';
+import MainScreen from '../main-screen/MainScreen.jsx';
 
-const App = () => {
+const App = (props) => {
+  const {places} = props;
 
-  return <MainScreen/>;
+  return <MainScreen
+    placeCards={places}
+  />;
 };
 
+App.propTypes = {
+  places: PropTypes.array.isRequired
+};
 
 export default App;
