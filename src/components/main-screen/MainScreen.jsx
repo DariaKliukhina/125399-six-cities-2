@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PlaceCard from '../place-card/PlaceCard.jsx';
 
 const MainScreen = (props) => {
@@ -107,6 +108,10 @@ const MainScreen = (props) => {
     </main>
   </div>;
 
+};
+
+MainScreen.propTypes = {
+  placeCards: PropTypes.array.isRequired
 };
 
 export default MainScreen;
