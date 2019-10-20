@@ -2,10 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PlaceCard = (props) => {
-  const {previewImage, price, type, title, isFavorite, isPremium} = props;
+  const {
+    previewImage,
+    price,
+    type,
+    title,
+    isFavorite,
+    isPremium,
+    onCardEnter,
+    onCardLeave,
+    onCardClick
+  } = props;
 
   return <div className="cities__places-list places__list tabs__content">
-    <article className="cities__place-card place-card">
+    <article className="cities__place-card place-card"
+      onMouseEnter={onCardEnter}
+      onMouseLeave={onCardLeave}>
       {isPremium ?
         <div className="place-card__mark">
           <span>Premium</span>
@@ -13,7 +25,7 @@ const PlaceCard = (props) => {
       }
 
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
+        <a href="#" onClick={onCardClick}>
           <img className="place-card__image" src={previewImage} width="260" height="200"
             alt="Place image"/>
         </a>
@@ -38,7 +50,7 @@ const PlaceCard = (props) => {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{title}</a>
+          <a href="#" onClick={onCardClick}>{title}</a>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
@@ -53,5 +65,8 @@ PlaceCard.propTypes = {
   title: PropTypes.string.isRequired,
   isFavorite: PropTypes.bool.isRequired,
   isPremium: PropTypes.bool.isRequired,
+  onCardEnter: PropTypes.func.isRequired,
+  onCardLeave: PropTypes.func.isRequired,
+  onCardClick: PropTypes.func.isRequired,
 };
 export default PlaceCard;
