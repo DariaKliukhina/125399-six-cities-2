@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import PlaceCard from '../place-card/PlaceCard.jsx';
 
 const MainScreen = (props) => {
+  const emptyEvent = () => {};
   const {placeCards} = props;
 
   return <div className="page page--gray page--main">
@@ -96,6 +97,9 @@ const MainScreen = (props) => {
                   title={card.title}
                   isFavorite={card.is_favorite}
                   isPremium={card.is_premium}
+                  onCardEnter={emptyEvent}
+                  onCardLeave={emptyEvent}
+                  onCardClick={emptyEvent}
                 />
               ))}
             </div>
