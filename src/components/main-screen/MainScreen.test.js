@@ -1,9 +1,8 @@
-/* eslint camelcase: 0*/
 import React from 'react';
 import renderer from 'react-test-renderer';
 import MainScreen from './MainScreen.jsx';
 
-const mockPlaces = [
+const offers = [
   {
     id: 1,
     city: {
@@ -14,22 +13,22 @@ const mockPlaces = [
         zoom: 10
       }
     },
-    preview_image: `img/apartment-01.jpg`,
+    previewImage: `img/apartment-01.jpg`,
     images: [`img/1.png`, `img/2.png`],
     title: `Beautiful &amp; luxurious apartment at great location`,
-    is_favorite: true,
-    is_premium: true,
+    isFavorite: true,
+    isPremium: true,
     rating: 4.8,
     type: `apartment`,
     bedrooms: 3,
-    max_adults: 4,
+    maxAdults: 4,
     price: 120,
     goods: [`Heating`, `Kitchen`, `Cable TV`, `Washing machine`, `Coffee machine`, `Dishwasher`],
     host: {
       id: 3,
-      is_pro: true,
+      isPro: true,
       name: `Angelina`,
-      avatar_url: `img/1.png`
+      avatarUrl: `img/1.png`
     },
     description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
     location: {
@@ -48,22 +47,22 @@ const mockPlaces = [
         zoom: 10
       }
     },
-    preview_image: `img/room.jpg`,
+    previewImage: `img/room.jpg`,
     images: [`img/1.png`, `img/2.png`],
     title: `Wood and stone place`,
-    is_favorite: false,
-    is_premium: false,
+    isFavorite: false,
+    isPremium: false,
     rating: 4.8,
     type: `Private room`,
     bedrooms: 3,
-    max_adults: 4,
+    maxAdults: 4,
     price: 80,
     goods: [`Heating`, `Kitchen`, `Cable TV`, `Washing machine`, `Coffee machine`, `Dishwasher`],
     host: {
       id: 3,
-      is_pro: true,
+      isPro: true,
       name: `Angelina`,
-      avatar_url: `img/1.png`
+      avatarUrl: `img/1.png`
     },
     description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
     location: {
@@ -82,22 +81,22 @@ const mockPlaces = [
         zoom: 10
       }
     },
-    preview_image: `img/apartment-02.jpg`,
+    previewImage: `img/apartment-02.jpg`,
     images: [`img/1.png`, `img/2.png`],
     title: `Canal View Prinsengrach`,
-    is_favorite: true,
-    is_premium: true,
+    isFavorite: true,
+    isPremium: true,
     rating: 4.8,
     type: `apartment`,
     bedrooms: 3,
-    max_adults: 4,
+    maxAdults: 4,
     price: 132,
     goods: [`Heating`, `Kitchen`, `Cable TV`, `Washing machine`, `Coffee machine`, `Dishwasher`],
     host: {
       id: 3,
-      is_pro: true,
+      isPro: true,
       name: `Angelina`,
-      avatar_url: `img/1.png`
+      avatarUrl: `img/1.png`
     },
     description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
     location: {
@@ -116,22 +115,22 @@ const mockPlaces = [
         zoom: 10
       }
     },
-    preview_image: `img/apartment-03.jpg`,
+    previewImage: `img/apartment-03.jpg`,
     images: [`img/1.png`, `img/2.png`],
     title: `Nice, cozy, warm big bed apartment`,
-    is_favorite: false,
-    is_premium: false,
+    isFavorite: false,
+    isPremium: false,
     rating: 4.8,
     type: `apartment`,
     bedrooms: 3,
-    max_adults: 4,
+    maxAdults: 4,
     price: 180,
     goods: [`Heating`, `Kitchen`, `Cable TV`, `Washing machine`, `Coffee machine`, `Dishwasher`],
     host: {
       id: 3,
-      is_pro: true,
+      isPro: true,
       name: `Angelina`,
-      avatar_url: `img/1.png`
+      avatarUrl: `img/1.png`
     },
     description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
     location: {
@@ -144,7 +143,7 @@ const mockPlaces = [
 
 it(`App correctly render first screen`, () => {
   const tree = renderer.create(<MainScreen
-    placeCards={mockPlaces}
+    placeCards={offers}
   />).toJSON();
 
   expect(tree).toMatchSnapshot();

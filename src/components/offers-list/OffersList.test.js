@@ -1,9 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import OffersList from './OffersList.jsx';
 
-import App from './app.jsx';
-
-const mockPlaces = [
+const offers = [
   {
     id: 1,
     city: {
@@ -142,9 +141,9 @@ const mockPlaces = [
   },
 ];
 
-it(`App correctly render ater relaunch`, () => {
-  const tree = renderer.create(<App
-    offers={mockPlaces}
+it(`App correctly render offers list`, () => {
+  const tree = renderer.create(<OffersList
+    placeCards={offers}
   />).toJSON();
 
   expect(tree).toMatchSnapshot();

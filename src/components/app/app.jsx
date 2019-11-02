@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import MainScreen from '../main-screen/MainScreen.jsx';
 
 const App = (props) => {
-  const {places} = props;
+  const {offers} = props;
 
   return <MainScreen
-    placeCards={places}
+    placeCards={offers}
   />;
 };
 
 App.propTypes = {
-  places: PropTypes.array.isRequired
+  offers: PropTypes.array.isRequired
 };
 
 export default App;
