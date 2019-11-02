@@ -229,7 +229,6 @@ exports[`App correctly render ater relaunch 1`] = `
               <article
                 className="cities__place-card place-card"
                 onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
               >
                 <div
                   className="place-card__mark"
@@ -304,7 +303,7 @@ exports[`App correctly render ater relaunch 1`] = `
                       <span
                         style={
                           Object {
-                            "width": "93%",
+                            "width": "96%",
                           }
                         }
                       />
@@ -339,7 +338,6 @@ exports[`App correctly render ater relaunch 1`] = `
               <article
                 className="cities__place-card place-card"
                 onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
               >
                 
                 <div
@@ -408,7 +406,7 @@ exports[`App correctly render ater relaunch 1`] = `
                       <span
                         style={
                           Object {
-                            "width": "93%",
+                            "width": "96%",
                           }
                         }
                       />
@@ -443,7 +441,6 @@ exports[`App correctly render ater relaunch 1`] = `
               <article
                 className="cities__place-card place-card"
                 onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
               >
                 <div
                   className="place-card__mark"
@@ -518,7 +515,7 @@ exports[`App correctly render ater relaunch 1`] = `
                       <span
                         style={
                           Object {
-                            "width": "93%",
+                            "width": "96%",
                           }
                         }
                       />
@@ -553,7 +550,6 @@ exports[`App correctly render ater relaunch 1`] = `
               <article
                 className="cities__place-card place-card"
                 onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
               >
                 
                 <div
@@ -622,7 +618,7 @@ exports[`App correctly render ater relaunch 1`] = `
                       <span
                         style={
                           Object {
-                            "width": "93%",
+                            "width": "96%",
                           }
                         }
                       />

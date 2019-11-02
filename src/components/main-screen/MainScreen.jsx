@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PlaceCard from '../place-card/PlaceCard.jsx';
+import OffersList from '../offers-list/OffersList.jsx';
 
 const MainScreen = (props) => {
-  const emptyEvent = () => {};
   const {placeCards} = props;
 
   return <div className="page page--gray page--main">
@@ -87,22 +86,9 @@ const MainScreen = (props) => {
                 <li className="places__option" tabIndex="0">Top rated first</li>
               </ul>
             </form>
-            <div className="cities__places-list places__list tabs__content">
-              {placeCards.map((card) => (
-                <PlaceCard
-                  key={`${card.id}-${card.title}`}
-                  previewImage={card.preview_image}
-                  price={card.price}
-                  type={card.type}
-                  title={card.title}
-                  isFavorite={card.is_favorite}
-                  isPremium={card.is_premium}
-                  onCardEnter={emptyEvent}
-                  onCardLeave={emptyEvent}
-                  onCardClick={emptyEvent}
-                />
-              ))}
-            </div>
+            <OffersList
+              placeCards={placeCards}
+            />
           </section>
           <div className="cities__right-section">
             <section className="cities__map map"></section>

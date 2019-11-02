@@ -1,4 +1,3 @@
-/* eslint camelcase: 0*/
 import React from 'react';
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -6,62 +5,68 @@ import PlaceCard from './PlaceCard.jsx';
 
 Enzyme.configure({adapter: new Adapter()});
 
-const mocks = {
+const mockOffer = {
   id: 1,
-  preview_image: `img/apartment-01.jpg`,
+  city: {
+    name: `Amsterdam`,
+    location: {
+      latitude: 52.370216,
+      longitude: 4.895168,
+      zoom: 10
+    }
+  },
+  previewImage: `img/apartment-01.jpg`,
   images: [`img/1.png`, `img/2.png`],
   title: `Beautiful &amp; luxurious apartment at great location`,
-  is_favorite: true,
-  is_premium: true,
+  isFavorite: true,
+  isPremium: true,
   rating: 4.8,
   type: `apartment`,
   bedrooms: 3,
-  max_adults: 4,
+  maxAdults: 4,
   price: 120,
+  goods: [`Heating`, `Kitchen`, `Cable TV`, `Washing machine`, `Coffee machine`, `Dishwasher`],
+  host: {
+    id: 3,
+    isPro: true,
+    name: `Angelina`,
+    avatarUrl: `img/1.png`
+  },
+  description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+  location: {
+    latitude: 52.35514938496378,
+    longitude: 4.673877537499948,
+    zoom: 8
+  }
 };
 
+
 it(`Simulate place-card click`, () => {
-  const clickHandler = jest.fn();
+  const mouseEventHandler = jest.fn();
 
   const placeCard = shallow(<PlaceCard
-    id = {mocks.id}
-    previewImage = {mocks.preview_image}
-    title = {mocks.title}
-    isFavorite = {mocks.is_favorite}
-    isPremium = {mocks.is_premium}
-    type = {mocks.type}
-    price = {mocks.price}
-    onCardEnter = {clickHandler}
-    onCardLeave = {clickHandler}
-    onCardClick = {clickHandler}
+    offer={mockOffer}
+    сardEnterHandler = {mouseEventHandler}
+    cardClickHandler = {mouseEventHandler}
   />);
 
   placeCard.find(`a`).forEach((node) => {
     node.simulate(`click`, {preventDefault() {}});
   });
 
-  expect(clickHandler).toHaveBeenCalledTimes(2);
+  expect(mouseEventHandler).toHaveBeenCalledTimes(2);
 });
 
 it(`Simulate place-card mouse-events`, () => {
   const mouseEventHandler = jest.fn();
 
   const placeCard = shallow(<PlaceCard
-    id = {mocks.id}
-    previewImage = {mocks.preview_image}
-    title = {mocks.title}
-    isFavorite = {mocks.is_favorite}
-    isPremium = {mocks.is_premium}
-    type = {mocks.type}
-    price = {mocks.price}
-    onCardEnter = {mouseEventHandler}
-    onCardLeave = {mouseEventHandler}
-    onCardClick = {mouseEventHandler}
+    offer={mockOffer}
+    сardEnterHandler = {mouseEventHandler}
+    cardClickHandler = {mouseEventHandler}
   />);
 
   const card = placeCard.find(`.place-card`);
   card.simulate(`mouseenter`);
-  card.simulate(`mouseleave`);
-
-  expect(mouseEventHandler).toHaveBeenCalledTimes(2);
+  expect(mouseEventHandler).toHaveBeenCalledTimes(1);
 });
