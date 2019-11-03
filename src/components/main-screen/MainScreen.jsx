@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import OffersList from '../offers-list/OffersList.jsx';
+import Map from '../city-map/Map.jsx';
 
 const MainScreen = (props) => {
   const {placeCards} = props;
+  const offersLocations = placeCards.map((offer) => offer.location);
 
   return <div className="page page--gray page--main">
     <header className="header">
@@ -91,7 +93,9 @@ const MainScreen = (props) => {
             />
           </section>
           <div className="cities__right-section">
-            <section className="cities__map map"></section>
+            <section className="cities__map map">
+              <Map offersLocations={offersLocations}></Map>
+            </section>
           </div>
         </div>
       </div>
