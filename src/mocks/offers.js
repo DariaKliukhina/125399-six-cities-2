@@ -5,7 +5,7 @@ const offers = [
       name: `Amsterdam`,
       location: {
         latitude: 52.370216,
-        longitude: 4.895168,
+        longitude: 4.8951686,
         zoom: 10
       }
     },
